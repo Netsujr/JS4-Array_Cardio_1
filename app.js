@@ -117,7 +117,7 @@ const [bLast, bFirst] = nextOne.split(', ');
 return aLast > bLast ? 1 : -1;
 
 });
-console.table(names);
+// console.table(names);
 
 
 // -----------------------------------------------------------------
@@ -125,3 +125,17 @@ console.table(names);
 // 8. Reduce Exercise
 // Sum up the instances of each of these
 const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck'];
+
+
+const vehicles = data.reduce((obj, item) => {
+  // console.log(item);
+  // console.log(obj);
+  if (!obj[item]) {
+    obj[item] = 0;
+  }
+
+  obj[item]++;
+  return obj;
+}, {});
+
+// console.log(vehicles);
