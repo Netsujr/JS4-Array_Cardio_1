@@ -31,8 +31,8 @@ const people = [
 
 const fifteen = inventors.filter(inventor =>
   inventor.year >= 1500 && inventor.year <= 1600);
-    // return true; //keep it;
-console.table(fifteen); //creates a table with info
+// return true; //keep it;
+// console.table(fifteen); //creates a table with info
 // console.log(fifteen);
 
 // -----------------------------------------------------------------
@@ -42,13 +42,21 @@ console.table(fifteen); //creates a table with info
 // 2. Give us an array of the inventors first and last names
 //map alaways return the same amount of items as you give it
 const fullNames = inventors.map(inventor => `${inventor.first} ${inventor.last}`);
-console.table(fullNames);
+// console.table(fullNames);
 
 
 // -----------------------------------------------------------------
 
 // Array.prototype.sort()
 // 3. Sort the inventors by birthdate, oldest to youngest
+
+const ages = inventors.map(inventor => (
+  (inventor.passed - inventor.year)
+  ));
+console.table(ages.sort()); // here i sorted the ages
+
+const ages2 = inventors.sort((a, b) => a.year > b.year ? 1 : -1);
+console.table(ages2); //here is who was born first
 
 // -----------------------------------------------------------------
 
