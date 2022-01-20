@@ -52,7 +52,7 @@ const fullNames = inventors.map(inventor => `${inventor.first} ${inventor.last}`
 
 const ages = inventors.map(inventor => (
   (inventor.passed - inventor.year)
-  ));
+));
 // console.table(ages.sort()); // here i sorted the ages
 
 const ages2 = inventors.sort((a, b) => a.year > b.year ? 1 : -1);
@@ -67,9 +67,23 @@ const totalYears = inventors.reduce((total, inventor) => {
 }, 0);
 
 // console.table(totalYears); // this is how many years they all lived added up
+
 // -----------------------------------------------------------------
 
 // 5. Sort the inventors by years lived
+
+const oldest = inventors.sort(function (a, b) {
+  const lastGuy = a.passed - a.year;
+  const nextGuy = b.passed - b.year;
+  return lastGuy > nextGuy ? -1 : 1;
+
+}, 0);
+
+// console.table(oldest);
+// console.table(ages.sort(function(a, b) {return b - a}));
+// b - a is big to small
+// a - b is small to big
+
 
 // -----------------------------------------------------------------
 
