@@ -58,6 +58,7 @@ const ages = inventors.map(inventor => (
 const ages2 = inventors.sort((a, b) => a.year > b.year ? 1 : -1);
 // console.table(ages2); // here is who was born first
 
+
 // -----------------------------------------------------------------
 
 // Array.prototype.reduce()
@@ -90,11 +91,27 @@ const oldest = inventors.sort(function (a, b) {
 // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
 // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
 
+const category = document.querySelector('.mw-category');
+const links = [...category.querySelectorAll('a')];
+// Array.from() creates and array
+//or we can spread [...]
+const de = links
+                .map(link => link.textContent)
+                .filter(streetName => streetName.includes('de'));
+
+// console.log(de);
+// this exercise has to be examined in the console
+
+
 // -----------------------------------------------------------------
 
 
 // 7. sort Exercise
 // Sort the people alphabetically by last name
+
+
+const names = 
+
 
 // -----------------------------------------------------------------
 

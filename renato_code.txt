@@ -1,0 +1,7 @@
+const ages = inventors.map(inventor => (
+  (inventor.passed - inventor.year)
+));
+// console.table(ages.sort()); // here i sorted the ages
+
+const ages2 = inventors.sort((a, b) => a.year > b.year ? 1 : -1);
+// console.table(ages2); // here is who was born first
